@@ -1,5 +1,7 @@
 # Excel reporting
 
+**Download from GitHub:** open `RiskFlow_Analytics.xlsx`, click the **download arrow next to Raw** (Download raw file), then open the downloaded workbook in desktop Excel. GitHub does not provide an interactive Excel preview. Screenshots of all seven sheets are in the main README.
+
 `RiskFlow_Analytics.xlsx` is a populated, usable workbook. You can open it immediately, filter tables, change thresholds and inspect the formulas. It has seven sheets: Dashboard, Controls, Credit Review, Credit Source, Fraud Detail, Daily Source and Review Queue.
 
 - Dashboard aggregates exposure, account counts, review volumes and monthly transaction monitoring.
