@@ -13,12 +13,18 @@ Built and checked on October 14, 2026. Business snapshot: September 30, 2026. Ru
 - Rendered and visually inspected all seven workbook sheets. Verified the exposure/monthly-monitoring charts and exported file contents.
 - Syntax-checked Python, dashboard JavaScript and the Windows Excel connection helper.
 
+## Publication checks
+
+- Verified the repository contains all files in the checksummed inventory, with no extra published files.
+- Checked all README local links and image targets. Captured the main application views and all seven Excel sheets, including a flagged transaction excerpt.
+- Regenerated all six raw input files and four reporting exports in an isolated in-memory database; all matched the delivered files byte for byte, confirming their synthetic origin.
+
 ## Integration limits
 
 - **OpenAI/Ollama:** adapter contracts, structured responses, refusals and fallback paths were tested with mocked provider responses. No paid API key or local language model was available for a live model call. Live use requires user configuration and checking actual generated explanations.
-- **MySQL:** schema/adapter/trigger and live test job are supplied. No running MySQL/Docker service was available locally. The live backend must be verified by running the provided workflow or dedicated local test database.
+- **MySQL:** the live MySQL 8.4 integration job passed in GitHub Actions, exercising generation, pipeline, saved review, native audit trigger, rerun persistence, evaluation and reporting export. No local MySQL service was used.
 - **Native Excel:** the workbook itself was generated, recalculated, exported and visually checked. Power Query connection and native PivotTable creation depend on the user's Excel installation; the helper was syntax-checked but not executed in desktop Excel. Check query refresh and formula calculation locally.
-- **GitHub:** public repository created at https://github.com/DaniyalHayat/riskflow-credit-fraud. Source publication and CI results are being verified; the local checks above remain the baseline until the workflow completes.
+- **GitHub:** all 90 project files were published and matched local file bytes. [Workflow run 38668738260](https://github.com/DaniyalHayat/riskflow-credit-fraud/actions/runs/38668738260) passed all five jobs on commit `cf370e6d1cafcf01c1e2f0b5748e9fffbd1b0bb8`: Python 3.11/3.12 on Ubuntu and Windows, plus live MySQL 8.4. Subsequent guide/verification edits do not change runtime code.
 
 ## Interpreting the results
 

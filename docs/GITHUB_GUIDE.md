@@ -1,4 +1,20 @@
-# Publish this project on GitHub
+# Use and update your GitHub project
+
+The project is already published at **https://github.com/DaniyalHayat/riskflow-credit-fraud**. You do not need to create another repository.
+
+## Recommended: work with the existing repository
+
+1. Open the repository link and choose **Code → Open with GitHub Desktop** (or **File → Clone repository** in GitHub Desktop and paste the URL). Choose a permanent local folder.
+2. Open the downloaded folder. On Windows, double-click `start_windows.cmd`; open `excel/RiskFlow_Analytics.xlsx` for the workbook.
+3. Edit your project files. In GitHub Desktop, inspect the Changes list and confirm that no keys or local database files are included.
+4. Write a short change summary, select **Commit to main**, then **Push origin**.
+5. Open the repository and its **Actions** tab to check the published change. Keep the local folder for future edits.
+
+For a download without GitHub Desktop, choose **Code → Download ZIP**, then extract it. The README includes setup and a visual walkthrough of the application and all seven workbook sheets.
+
+The instructions below explain publication from scratch if you later create a separate portfolio project.
+
+# Publish a new copy from scratch
 
 Publish the **riskflow-credit-fraud folder**, not your full Resume project and not the ZIP as a single file. Extract the ZIP first. The correct folder contains `README.md`, `riskflow`, `web`, `tests`, `excel`, and `.gitignore`.
 
