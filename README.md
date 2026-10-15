@@ -12,6 +12,172 @@ A local analyst workspace that turns synthetic financial records into separate c
 
 ![RiskFlow dashboard](docs/images/dashboard.jpg)
 
+## Visual walkthrough
+
+The screenshots below come from the running local application and the delivered Excel workbook. All customers, financial records, labels and review examples are synthetic. Open a section to inspect the workflow; click an image to view it at full size.
+
+### Analyst workspace
+
+The overview above connects four distinct measures: outstanding loan exposure, transaction volume, fraud alerts, and unresolved credit/fraud cases. Credit-band exposure is an as-of snapshot; the activity chart shows transaction alerts over time. The priority table opens the underlying review cases.
+
+<details>
+<summary><strong>Review queue — search, separate risk types, filter status, and prioritize work</strong></summary>
+
+Search by account/case ID, filter credit reviews separately from fraud monitoring, and narrow the queue by disposition. Scores determine review priority. Pagination keeps a large case list usable.
+
+![Review queue with account identifiers, scores, risk bands and statuses](docs/images/review_queue.jpg)
+
+</details>
+
+<details>
+<summary><strong>Credit case — explain the score and document the analyst's decision</strong></summary>
+
+Each evidence card shows an observed financial indicator, its configured trigger and its point contribution. The review form captures the analyst, status and reasoning. History retains prior decisions rather than replacing them.
+
+![Credit case showing financial indicators, point contributions and review history](docs/images/credit_case.jpg)
+
+The source sections expose historical installments and the account's financial profile. Currency is displayed in USD; integer cents remain the storage contract. This lets a reviewer distinguish current unpaid delinquency from installments that were paid late.
+
+![Expanded repayment records and financial profile](docs/images/credit_sources.jpg)
+
+</details>
+
+<details>
+<summary><strong>Review explanation — evidence-linked summary with an explicit offline mode</strong></summary>
+
+The example uses the offline template and is labeled **no AI**. The same control offers configured OpenAI or local Ollama providers. Generated explanations cite the existing signal IDs and suggest review steps; they cannot change a score or approve/deny a loan.
+
+![Offline review explanation with evidence identifiers and next steps](docs/images/credit_summary.jpg)
+
+</details>
+
+<details>
+<summary><strong>Fraud case — compare a transaction with its prior activity</strong></summary>
+
+This synthetic example combines an amount spike, rapid activity and repeated payments. The three contributions total an 85/100 review-priority score. A flag means the transaction warrants investigation; it is not a finding of proven fraud.
+
+![Fraud case showing amount, velocity and repeated-payment signals](docs/images/fraud_case.jpg)
+
+The expanded records show recent activity through the scored transaction. The rolling baseline and the source view exclude later observations, including later IDs at the same timestamp.
+
+![Fraud source records showing the repeated-payment sequence](docs/images/fraud_sources.jpg)
+
+</details>
+
+<details>
+<summary><strong>Performance and scenarios — inspect detection/workload tradeoffs</strong></summary>
+
+The benchmark reports precision, recall, false-positive rate and alert rate against synthetic labels. Independent credit/fraud sliders preview how many records and how much exposure/transaction volume cross a chosen cutoff. Scenario previews do not overwrite saved rules or case decisions.
+
+![Synthetic benchmark and independent credit/fraud threshold sliders](docs/images/analytics.jpg)
+
+The alternative cutoff example illustrates the change in credit review volume at a score of 100 while keeping the fraud cutoff at 40.
+
+![Credit threshold scenario set to 100](docs/images/scenarios.jpg)
+
+</details>
+
+<details>
+<summary><strong>Data quality — trace accepted/rejected rows and batch lineage</strong></summary>
+
+The source table reconciles input, accepted and rejected record counts. Five intentionally invalid transactions exercise the quarantine path. Run IDs, source/rule hashes and local runtime make the batch inspectable. Accepted transaction counts and integer-cent totals are reconciled before commit.
+
+![Validation counts, quarantined records and batch fingerprints](docs/images/data_quality.jpg)
+
+</details>
+
+<details>
+<summary><strong>Project guide — explain the pipeline, AI role and reporting workflow</strong></summary>
+
+The in-app guide explains the sequence from synthetic inputs to analyst review and Excel reporting. It also states the limits of the heuristic scores, AI explanations, revision-aware reviews and local demonstration server.
+
+![In-app architecture and project guide](docs/images/project_guide.jpg)
+
+</details>
+
+### Excel workbook — all seven sheets
+
+[Download/open RiskFlow_Analytics.xlsx](excel/RiskFlow_Analytics.xlsx). These are rendered worksheet previews of the supplied workbook. Dashboard and Controls show their complete working sections; long record tables show readable sample rows rather than thousands of rows compressed into one image. Every source record remains available in the workbook.
+
+| Sheet | What it demonstrates |
+|---|---|
+| Dashboard | Formula-linked portfolio exposure, review volumes, credit distribution and monthly monitoring charts |
+| Controls | Editable review thresholds, credit signal triggers and scoring weights |
+| Credit Review | DTI/utilization calculations, visible rule contributions and calculated credit bands |
+| Credit Source | Financial inputs and saved pipeline scores for all 300 accounts |
+| Fraud Detail | All 18,219 transaction assessments, prior baselines, velocity/repeats and risk scores |
+| Daily Source | Daily transaction totals, alert counts/rates and the month key used by reporting |
+| Review Queue | A reporting snapshot of case IDs, priorities, statuses, analysts and notes |
+
+<details>
+<summary><strong>1. Dashboard — portfolio and monitoring outputs</strong></summary>
+
+The main view links to the calculated credit review and source tables. It separates loan exposure from transaction activity, counts records above the selected thresholds, and shows exposure by credit band plus monthly fraud-alert totals.
+
+![Excel Dashboard sheet with exposure, review counts and two native charts](docs/images/excel/Dashboard.png)
+
+</details>
+
+<details>
+<summary><strong>2. Controls — editable thresholds and weights</strong></summary>
+
+Amber cells identify editable controls. Credit trigger levels and weights feed the Credit Review formulas. Credit/fraud review cutoffs change workbook scenario counts. These cells do not rewrite Python configuration or recompute historical fraud features; saved pipeline bands remain a separate reference.
+
+![Excel Controls sheet with editable rule thresholds and point weights](docs/images/excel/Controls.png)
+
+</details>
+
+<details>
+<summary><strong>3. Credit Review — traceable calculations and score contributions</strong></summary>
+
+DTI equals total monthly debt obligations divided by monthly income. Utilization equals revolving balance divided by its limit. The build then exposes DTI, utilization, delinquency and late-history point contributions, caps their sum at 100, and assigns the configured band. At default controls, all 300 calculated scores match Python.
+
+![Excel Credit Review sheet showing ratios, rule points, total score and band](docs/images/excel/Credit_Review.png)
+
+</details>
+
+<details>
+<summary><strong>4. Credit Source — account inputs and pipeline reference values</strong></summary>
+
+This filterable input table contains monthly income/debt, revolving balance/limit, delinquency, late history and outstanding loan exposure. Saved pipeline scores/bands allow comparison with workbook scenarios. The preview shows the first 13 of 300 synthetic accounts.
+
+![Excel Credit Source sheet with financial inputs and saved pipeline classifications](docs/images/excel/Credit_Source.png)
+
+</details>
+
+<details>
+<summary><strong>5. Fraud Detail — transaction assessment features and flagged examples</strong></summary>
+
+Each row is one scored transaction. Amount/baseline ratios, ten-minute counts, repeated-payment counts and the final score are separate fields. Early rows legitimately have blank baselines because fewer than ten prior observations are available; a missing baseline is not replaced with zero.
+
+![Excel Fraud Detail sheet showing transaction amounts, prior baselines and monitoring features](docs/images/excel/Fraud_Detail.png)
+
+The second view shows the synthetic burst around transaction T0014426, including its 85-point assessment and surrounding observations. It demonstrates how the feature values change as a repeated-payment sequence develops.
+
+![Excel Fraud Detail excerpt around a flagged repeated-payment burst](docs/images/excel/Fraud_Flagged_Example.png)
+
+</details>
+
+<details>
+<summary><strong>6. Daily Source — the grain behind monitoring trends</strong></summary>
+
+Daily transaction counts, USD volume, fraud alerts and alert rates feed the monthly dashboard. The explicit month key keeps aggregation transparent. This is transaction activity history, not a time series of loan exposure.
+
+![Excel Daily Source sheet with daily volume, alert rates and month keys](docs/images/excel/Daily_Source.png)
+
+</details>
+
+<details>
+<summary><strong>7. Review Queue — analyst workflow in the reporting layer</strong></summary>
+
+The exported queue contains case ID/type, account, score, band, associated amount, status, analyst and notes. It is a snapshot for reporting; decisions are recorded in the web application and pulled into Excel after export/refresh. This baseline shows cases before new analyst decisions.
+
+![Excel Review Queue sheet with case priorities and disposition fields](docs/images/excel/Review_Queue.png)
+
+</details>
+
+Power Query connections and a native credit-exposure PivotTable are added by the supplied Windows Excel helper after local setup. See [Excel refresh instructions](excel/README.md) for the connection workflow and its verification limits.
+
 ## Start here
 
 1. Download and extract the complete project folder.

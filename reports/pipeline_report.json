@@ -1,0 +1,38 @@
+{
+  "run_id": "498e4af2c26f4352b65a732492858ddf",
+  "created_at": "2026-10-14T11:04:46.863080+00:00",
+  "as_of": "2026-09-30",
+  "rules_hash": "af11a49240fb4364b15d5f5c44a21b6b345cf0ab0e1d2a0537ff91484b11450f",
+  "input_hash": "ef733d5718de1a9b3cb325d1226232590bc8a7503d6cbc1822990a07cc81c417",
+  "duration_seconds": 0.7713,
+  "stats": {
+    "customers": {
+      "input_rows": 300,
+      "accepted_rows": 300,
+      "rejected_rows": 0
+    },
+    "loans": {
+      "input_rows": 300,
+      "accepted_rows": 300,
+      "rejected_rows": 0
+    },
+    "payments": {
+      "input_rows": 900,
+      "accepted_rows": 900,
+      "rejected_rows": 0
+    },
+    "transactions": {
+      "input_rows": 18224,
+      "accepted_rows": 18219,
+      "rejected_rows": 5,
+      "input_parseable_amount_cents": 418378170,
+      "accepted_amount_cents": 418341374
+    }
+  },
+  "credit_cases": 154,
+  "fraud_cases": 204,
+  "reconciliation": {
+    "transaction_row_difference": 0,
+    "transaction_amount_difference_cents": 0
+  }
+}

@@ -1,0 +1,21 @@
+# Local credentials and environment
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.db
+*.db-*
+*.inspect.ndjson
+data/local/
+reports/summaries/
+node_modules/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+dist/
+# Shipped synthetic CSVs, example reports and workbook are intentional portfolio artifacts.

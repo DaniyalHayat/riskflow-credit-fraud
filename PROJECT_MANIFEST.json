@@ -1,0 +1,452 @@
+{
+  "project": "RiskFlow",
+  "version": "1.0.0",
+  "data": "Entirely synthetic",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 112,
+      "sha256": "34be3a84835030917e79f7c869372744a818aba27d83bb03417bd50f7d3eaec5"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 465,
+      "sha256": "696d6f333ebde94a3f0c3691362f42495bb3815eba9fb2f890d1a89e41ceae0c"
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "bytes": 1652,
+      "sha256": "6ffc0f8dd674b95061a9e9ded05c4055cfbbfc7c984464c2786570182ef071c3"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 321,
+      "sha256": "f6808fd75ab75ea6dd1d685e36fc47d5b3f48bb4ba0c42479b02c096a2fcdd0b"
+    },
+    {
+      "path": "compose.yaml",
+      "bytes": 720,
+      "sha256": "bde1ccbcfbb340e7eebfd09cfdb22254fc20edf749ed203339e95d49b8fd1501"
+    },
+    {
+      "path": "config/rules.json",
+      "bytes": 825,
+      "sha256": "5d6452a7488c4acd0a1e918d87646c47eb8cc428134ed6047d765ae5b79bfdfd"
+    },
+    {
+      "path": "data/raw/customers.csv",
+      "bytes": 11768,
+      "sha256": "47c7cab3abe6a065e5b4c66a5732d444b087cef9ac9df358af3edbe91ef95b73"
+    },
+    {
+      "path": "data/raw/evaluation_labels.csv",
+      "bytes": 850411,
+      "sha256": "e3a8e568431e75635f2fbeac04d66183e91846e504bbd28ad30d0e8d4f56dc32"
+    },
+    {
+      "path": "data/raw/loans.csv",
+      "bytes": 11422,
+      "sha256": "1414ef1a27e35ec8f9eb0045ca3654353865dfbd46588dd9bb84308eda6f7d4b"
+    },
+    {
+      "path": "data/raw/manifest.json",
+      "bytes": 341,
+      "sha256": "46b63f2589ea99276471d7631d7bb099c2a28542489f3883c0c0768e8b20a347"
+    },
+    {
+      "path": "data/raw/payments.csv",
+      "bytes": 42774,
+      "sha256": "24eeeaaab47ff42cb9a4a0160734a0245770c1d1cfd49db7adca9e351e812899"
+    },
+    {
+      "path": "data/raw/transactions.csv",
+      "bytes": 901952,
+      "sha256": "705e740147f49ff73e9e2ecb1fa2963fa7ed6cb2a98d5ec07bad4b38beb592be"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 172,
+      "sha256": "24bf49de4f95714771006ca3fca7a8da3eeeb422c52eefff7de188aae9fd4cbd"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 4311,
+      "sha256": "124a0a1f21074a7eb910354d2406bcc5a78c2321d919178f50651f5a58edbfd5"
+    },
+    {
+      "path": "docs/DATA_DICTIONARY.md",
+      "bytes": 3715,
+      "sha256": "b701a9a9711fde36aa5e071b4176739afdaf54bcbfe8f67779bfe3f12051aa2e"
+    },
+    {
+      "path": "docs/DEMO_WALKTHROUGH.md",
+      "bytes": 3039,
+      "sha256": "797533a6b60548a5bb4cc38a6db8324092d41e8cc3d9021c32690770a744c3a6"
+    },
+    {
+      "path": "docs/EVALUATION.md",
+      "bytes": 2987,
+      "sha256": "d08060ef67f0f31c70446d7802e4c9ba0b5445b69b1063e37389f5b5e62a30d9"
+    },
+    {
+      "path": "docs/GITHUB_GUIDE.md",
+      "bytes": 4993,
+      "sha256": "448e1a389b2e65cef56951af18286b8258e39dc1d1ce35d6742ceacb1e0de977"
+    },
+    {
+      "path": "docs/images/analytics.jpg",
+      "bytes": 86842,
+      "sha256": "d51f5cab15e45e7f2de1ecfe762ab2c0769e5c69f316f9051067b43f172842ba"
+    },
+    {
+      "path": "docs/images/case_review.jpg",
+      "bytes": 100020,
+      "sha256": "ec443c59b3fbf7d7fac9dc8355f3ce9275d6d6ad336cad5456567912d675d560"
+    },
+    {
+      "path": "docs/images/credit_case.jpg",
+      "bytes": 102070,
+      "sha256": "b9d103520fb0a1261d647756532f2be0268676808b4e33f6ffd740dcc5d99316"
+    },
+    {
+      "path": "docs/images/credit_sources.jpg",
+      "bytes": 129169,
+      "sha256": "1c7c40f6f2a559d97d12bef7d88cf52479f8ea2880c9ec9eed8b7e8e9e1cf385"
+    },
+    {
+      "path": "docs/images/credit_summary.jpg",
+      "bytes": 115942,
+      "sha256": "fcf810b219af69ab5bbdb05641c6fcef50eef6a376a18557e619c25bd9aa5966"
+    },
+    {
+      "path": "docs/images/dashboard.jpg",
+      "bytes": 111309,
+      "sha256": "9f056b278ea6ebd2895a9f28287b63f16196c9ccbec9e24342b3f834e16ae147"
+    },
+    {
+      "path": "docs/images/data_quality.jpg",
+      "bytes": 83257,
+      "sha256": "30f4df48b15527d1a103bdaf8ffa7e32e3b348acfd24121b5fdffee09d436ca3"
+    },
+    {
+      "path": "docs/images/excel/Controls.png",
+      "bytes": 118321,
+      "sha256": "cd8db98c432bab033a5d07816833adfad16e16b20d9689e65915e8c90e699774"
+    },
+    {
+      "path": "docs/images/excel/Credit_Review.png",
+      "bytes": 137200,
+      "sha256": "d2507e72fcff02256ebbe105d48775d5e7b15c1da3d22357dd2b35b78fb95541"
+    },
+    {
+      "path": "docs/images/excel/Credit_Source.png",
+      "bytes": 142295,
+      "sha256": "f65924d31146cc9f8a2c0deedf9bf3275b49fea2800f342841af211860d674e5"
+    },
+    {
+      "path": "docs/images/excel/Daily_Source.png",
+      "bytes": 93124,
+      "sha256": "2a6a53e1669cb7194bec7ca651677e2fc2d2c1fa831d94c388d7d92ab3484296"
+    },
+    {
+      "path": "docs/images/excel/Dashboard.png",
+      "bytes": 179094,
+      "sha256": "204cc2860f71ca764bccdd7b9a914fc2faa63b2e7eb359378a87a6f40589c449"
+    },
+    {
+      "path": "docs/images/excel/Fraud_Detail.png",
+      "bytes": 109658,
+      "sha256": "2671d372c3660c9b4459afa5da0c72dd1ad493a3d9bbef2589647d754245299d"
+    },
+    {
+      "path": "docs/images/excel/Fraud_Flagged_Example.png",
+      "bytes": 115410,
+      "sha256": "5a3211eca913470d559e604a3ab809e4bb778b0342557e30c4c8424524fb3431"
+    },
+    {
+      "path": "docs/images/excel/Review_Queue.png",
+      "bytes": 105606,
+      "sha256": "6f323f38b4d667bf22bff996e1c16ea4ae9d78d6c15259d05cf7b32f536b844e"
+    },
+    {
+      "path": "docs/images/fraud_case.jpg",
+      "bytes": 93709,
+      "sha256": "64cb661119a01640c7dec23fd2373b776b8ee6375aa6753ec3bb9899b043f798"
+    },
+    {
+      "path": "docs/images/fraud_sources.jpg",
+      "bytes": 92026,
+      "sha256": "0151ddc497a6064e95dbc04526ee56dd45bd8473849de3717433b5c37a757ece"
+    },
+    {
+      "path": "docs/images/project_guide.jpg",
+      "bytes": 136732,
+      "sha256": "b636f37450b08261771cb52fa9441d7eb6368095422bc5c5760fe43cee4017cd"
+    },
+    {
+      "path": "docs/images/review_queue.jpg",
+      "bytes": 97699,
+      "sha256": "40a92c6011278ec566a62a7b5826f65917dbdb1126bd606ebd288a076a80714e"
+    },
+    {
+      "path": "docs/images/scenarios.jpg",
+      "bytes": 79651,
+      "sha256": "506e7dadaec90fa1e3a0535c2cd9b5f797cfe11a2a5a7e4295e553bcf7ed76a5"
+    },
+    {
+      "path": "docs/MYSQL.md",
+      "bytes": 2679,
+      "sha256": "9e8a3d2a8d11e81368ae343530e1a92946d069c3579e2de05f1508426f44bd16"
+    },
+    {
+      "path": "docs/PRODUCT_REQUIREMENTS.md",
+      "bytes": 4095,
+      "sha256": "1aed32e27bfdd2d5ecc51f01aff2951a234c440da923e04dc20aa1f112f29d83"
+    },
+    {
+      "path": "docs/RESUME_AND_ROLE_GUIDE.md",
+      "bytes": 2047,
+      "sha256": "11f3bffa2b75d69a607a411f118d827d4a56da7f490c1785483719b81b18a2ce"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "bytes": 2872,
+      "sha256": "7637f0f40a230c2294e0be857180186a57268418195519008343c7c154139f75"
+    },
+    {
+      "path": "excel/connect_excel.ps1",
+      "bytes": 6683,
+      "sha256": "5cba8f024247cf3f4f1ec20fe23e346ec582681957051a83a74b7ed62b5f399d"
+    },
+    {
+      "path": "excel/power_query/CaseSource.pq",
+      "bytes": 641,
+      "sha256": "d8102beb8375e1235e019acf69eddd03206303ca09a84cf9ed10a767d333e244"
+    },
+    {
+      "path": "excel/power_query/CreditSource.pq",
+      "bytes": 1460,
+      "sha256": "8fd0719394b5d9472efc8f75f08fb07e0342db8aecf867ec2c1e52cedb8fd993"
+    },
+    {
+      "path": "excel/power_query/DailySource.pq",
+      "bytes": 718,
+      "sha256": "41057905bd57b13f71077665e09980595f9a2f8515b785f18d2019db9321b365"
+    },
+    {
+      "path": "excel/power_query/FraudSource.pq",
+      "bytes": 1121,
+      "sha256": "30ea9fb1c260cdbef00124c642f8741451403c80e407644202f5acd931c26052"
+    },
+    {
+      "path": "excel/power_query/ReportsFolder.pq",
+      "bytes": 101,
+      "sha256": "86d576cdb0ec690b12aba9f1138956bd23b9f888b15a02d96aee86296e1b6eaa"
+    },
+    {
+      "path": "excel/README.md",
+      "bytes": 5100,
+      "sha256": "2754bf4c6529011708c5734e2064f87d77e2d3b6924b0ac727adb44b26a7a608"
+    },
+    {
+      "path": "excel/RiskFlow_Analytics.xlsx",
+      "bytes": 1172127,
+      "sha256": "8b44534b8c4f98761a22913e4978059e06700d3a2ab021fd6b4c6dc98d3e323f"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1078,
+      "sha256": "1e319d5a03e0a3c2c3010179d4bdef7252bc810d0a7d0f6ea5b2b442138e2c0b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 18993,
+      "sha256": "3307bafee88391680c9ae7a66a6521fc8976e1ea5b36e753cf9c7515ec966340"
+    },
+    {
+      "path": "reports/audit_events.csv",
+      "bytes": 64,
+      "sha256": "547889b005ce1c6177fa917ce0f7acc6b127df36d98d869dfb70049924cee5c5"
+    },
+    {
+      "path": "reports/case_queue.csv",
+      "bytes": 110029,
+      "sha256": "4b43e9ee1802dcf441ba0ca8fd7ac82f9d9a09620d4648160fcc21cf611d7e79"
+    },
+    {
+      "path": "reports/credit_assessments.csv",
+      "bytes": 87902,
+      "sha256": "9fee908206061fac788d26b48dd1771f646f3d4e88928337f52e8bc833613a2b"
+    },
+    {
+      "path": "reports/daily_monitoring.csv",
+      "bytes": 4743,
+      "sha256": "f0debda44dcc1ae1b3473b004d81e9b9101a2d02688ab8fd59bd127bc401fba0"
+    },
+    {
+      "path": "reports/evaluation.json",
+      "bytes": 990,
+      "sha256": "dbdbefb90a48e845cf7d6662c7939e415636cff3b04a96861780f626947eedcd"
+    },
+    {
+      "path": "reports/fraud_assessments.csv",
+      "bytes": 1851930,
+      "sha256": "d513b6cc507be398df915e9b07fa811e37df0efd5002aa680c372ef8f6683628"
+    },
+    {
+      "path": "reports/pipeline_report.json",
+      "bytes": 1042,
+      "sha256": "149f1d57028a5f397738a9b0d8d9f21f5a53f0e28e016b628c515ed2f3b9ec21"
+    },
+    {
+      "path": "reports/portfolio.csv",
+      "bytes": 205,
+      "sha256": "dc3f3379c05d1882e8226c747b14fdaa361ce6680d45257e1c10c2f1f61d5025"
+    },
+    {
+      "path": "reports/quarantine.csv",
+      "bytes": 1247,
+      "sha256": "cac66a94c67c9436eba9c64979a7af1bf4c86819fcc9684c8b9c79649a3eef55"
+    },
+    {
+      "path": "reports/threshold_sensitivity.csv",
+      "bytes": 985,
+      "sha256": "5787658928b7af230f2fec197150c2600e2a007cc5b6827309ef5827c6ee90a3"
+    },
+    {
+      "path": "reports/workbook_data.json",
+      "bytes": 8001183,
+      "sha256": "e97f088487f5d72bd93d5f0edfcbdf7b0d18b7901bf6fd38954b5989a822c9a4"
+    },
+    {
+      "path": "requirements-mysql.txt",
+      "bytes": 34,
+      "sha256": "111777e65dc958ecc2e9cbb98c853cd50ad936351953d6b5ee20b1e4487595c0"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 79,
+      "sha256": "7b5478477e4741d6f7b30587ad785357526808fc8b6407e9c366df0ce7c267b7"
+    },
+    {
+      "path": "riskflow/__init__.py",
+      "bytes": 93,
+      "sha256": "c8c98eb99642304bfc5dd62d42b071dea0e03ce805f8feeb3c06e8c7593af23f"
+    },
+    {
+      "path": "riskflow/__main__.py",
+      "bytes": 2474,
+      "sha256": "b849ac410a8ba941d411f350f97d099a01cacce918bad63d567eafd3587ce18d"
+    },
+    {
+      "path": "riskflow/ai.py",
+      "bytes": 7771,
+      "sha256": "588e17e265f8c92e9a8840de547e05cefa88f8bb7d71b31ef6bb556998fc1c21"
+    },
+    {
+      "path": "riskflow/config.py",
+      "bytes": 621,
+      "sha256": "41c51dcf5ddbfd0801bd37489c1cdce0230720ab828f5547b691a18801205df2"
+    },
+    {
+      "path": "riskflow/data.py",
+      "bytes": 11328,
+      "sha256": "a26e955b87b96159f7ee4b86e24a42e4ad1f2ef73670810dbc52ee18e8b14891"
+    },
+    {
+      "path": "riskflow/db.py",
+      "bytes": 3032,
+      "sha256": "80b815003095e94d438b976886129a557e0113675dc8297b5383ee63dddaf647"
+    },
+    {
+      "path": "riskflow/evaluate.py",
+      "bytes": 2517,
+      "sha256": "57e0a8f0ff0821e459e761e309cfa0328f6107315e1919c916a33b3de53251b6"
+    },
+    {
+      "path": "riskflow/export.py",
+      "bytes": 2537,
+      "sha256": "9e7f707b0356f191706e1f2ab1c0f22e9d9ecb0d07b0f78ac61398da4b25ef84"
+    },
+    {
+      "path": "riskflow/pipeline.py",
+      "bytes": 3585,
+      "sha256": "347fa3fa2c77c607c2783f1d0a45456a939f25cd62b400714a7ff37d1bdeda81"
+    },
+    {
+      "path": "riskflow/review.py",
+      "bytes": 3675,
+      "sha256": "966bbcb0f57e9985805bf9517366210c3e0f74cb0fe61b5efb71159c94b77602"
+    },
+    {
+      "path": "riskflow/scoring.py",
+      "bytes": 5277,
+      "sha256": "5fac5614a5a187c68c351da1cf0114a46fe8edd10a3815620395accb34591872"
+    },
+    {
+      "path": "riskflow/web.py",
+      "bytes": 8173,
+      "sha256": "e0ba80a4cdba6511b9fd5a23d6667129fad49a4e858b42d0eab6f912bdad694f"
+    },
+    {
+      "path": "scripts/package_project.py",
+      "bytes": 2067,
+      "sha256": "37cd241f4da8ea604570d1826c6bb55613d9be07d97f957ae066827e175109ed"
+    },
+    {
+      "path": "sql/analyst_queries.sql",
+      "bytes": 1733,
+      "sha256": "4cf61b64156819a0952f878f13ebbdcedec7128d7b01d2d2f4ff6199bdb966cc"
+    },
+    {
+      "path": "sql/schema_mysql.sql",
+      "bytes": 4442,
+      "sha256": "c4249d1b077793bdc0ee1ed1a123cbbbe2fa49d53beaaa483fc9b4e1953ebe17"
+    },
+    {
+      "path": "sql/schema_sqlite.sql",
+      "bytes": 3810,
+      "sha256": "320519224db029a01ed59ece38453b6517dd63dba3912323c5cb92ce22c9bd9c"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 1877,
+      "sha256": "98f11d9dbb926d0f8442a611d4cf422ee2f4f349b95c5dcc2d5a22687903a82b"
+    },
+    {
+      "path": "start_mac_linux.sh",
+      "bytes": 153,
+      "sha256": "887e4b465dd85640d7ee9b079edb63600004399c046fc26a7624ecacb029e1d8"
+    },
+    {
+      "path": "start_windows.cmd",
+      "bytes": 463,
+      "sha256": "b49ecf26b9729c9a49ffb8d1f9a3caafa39b567065c3e6829095cefd694ff6f3"
+    },
+    {
+      "path": "tests/test_riskflow.py",
+      "bytes": 16060,
+      "sha256": "cb8d39ebcdc125411bb4b2df21765cd2101cc0346448a17d5dad41e57ff39808"
+    },
+    {
+      "path": "tests/test_web.py",
+      "bytes": 4621,
+      "sha256": "681499a051d1282a5bda12ea2c63e4df029f635ee8214004b2fd2a49794c12cf"
+    },
+    {
+      "path": "web/app.js",
+      "bytes": 21262,
+      "sha256": "58ef98b5001d1619c4a02872001e9f9d1fd108750b1c19e9ca5aad36ac126c9e"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 1414,
+      "sha256": "3a46cbcf4886fcbf23383bd9c690aada36083c4b155f12be299b73005bb2c306"
+    },
+    {
+      "path": "web/style.css",
+      "bytes": 9310,
+      "sha256": "fc4d114db50a19f751cdafa0765f1641bb91d244009ee689290080012232ecd2"
+    }
+  ]
+}

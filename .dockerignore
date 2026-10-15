@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+.git
+.venv
+venv
+__pycache__
+*.pyc
+*.db
+data/local
+reports/summaries
+node_modules
+dist

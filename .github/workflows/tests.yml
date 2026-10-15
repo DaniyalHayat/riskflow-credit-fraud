@@ -1,0 +1,49 @@
+name: Test RiskFlow
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  core:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
+      - run: python -m riskflow demo
+      - run: python -m riskflow summary
+  mysql:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: ci-only-root
+          MYSQL_ROOT_HOST: '%'
+          MYSQL_DATABASE: riskflow
+          MYSQL_USER: riskflow
+          MYSQL_PASSWORD: ci-only-password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-mysql.txt
+      - name: Enable audit trigger creation in the isolated CI database
+        run: python -c "import mysql.connector; c=mysql.connector.connect(host='127.0.0.1',user='root',password='ci-only-root'); c.cursor().execute('SET GLOBAL log_bin_trust_function_creators=1'); c.close()"
+      - run: python -m unittest discover -s tests -v
+        env:
+          RISKFLOW_TEST_MYSQL: '1'
+          MYSQL_USER: riskflow
+          MYSQL_PASSWORD: ci-only-password
+          MYSQL_DATABASE: riskflow

@@ -1,0 +1,21 @@
+services:
+  mysql:
+    image: mysql:8.4
+    # Dedicated local demo: permit the app user to create its audit trigger with binlogging.
+    command: ["--log-bin-trust-function-creators=1"]
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Copy .env.example to .env first}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-riskflow}
+      MYSQL_USER: ${MYSQL_USER:-riskflow}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+volumes:
+  mysql_data:
