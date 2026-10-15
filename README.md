@@ -1,6 +1,6 @@
 # RiskFlow — Credit Risk & Fraud Analytics
 
-A local analyst workspace that turns synthetic financial records into separate credit assessments and transaction alerts, explains the evidence, records review decisions, and produces Excel reporting feeds.
+I built RiskFlow to explore how financial risk analysis, reliable data pipelines, and product design fit together in one analyst workflow. It turns synthetic financial records into separate credit assessments and transaction alerts, makes the supporting evidence visible, preserves review decisions, and feeds an Excel reporting layer.
 
 **Python · SQL · SQLite / MySQL · Excel · optional OpenAI / Ollama**
 
@@ -8,9 +8,26 @@ A local analyst workspace that turns synthetic financial records into separate c
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-54657A)](LICENSE)
 
-[Open the Excel workbook](excel/RiskFlow_Analytics.xlsx) · [Architecture](docs/ARCHITECTURE.md) · [Product requirements](docs/PRODUCT_REQUIREMENTS.md) · [Five-minute demo](docs/DEMO_WALKTHROUGH.md)
+[Open the Excel workbook](excel/RiskFlow_Analytics.xlsx) · [Architecture](docs/ARCHITECTURE.md) · [Product requirements](docs/PRODUCT_REQUIREMENTS.md) · [Workflow walkthrough](docs/DEMO_WALKTHROUGH.md) · [AI setup](docs/AI_SETUP.md)
 
 ![RiskFlow dashboard](docs/images/dashboard.jpg)
+
+## Why I built it
+
+My starting point was a SQL transaction-monitoring prototype. I wanted to take that foundation beyond a list of anomaly flags and build a workflow that answers three questions: what needs review, why was it flagged, and what happened after someone investigated it?
+
+The intersection of finance and technology is what interests me about this project. I wanted the financial indicators, data-quality checks, interface, and reporting outputs to tell the same story. That led me to keep credit review and fraud monitoring separate while bringing their evidence and review history into one workspace.
+
+## My design choices
+
+- **Make the score inspectable.** I used explicit rules so each case shows the observed value, trigger, and point contribution. The scores prioritize review; they are not default probabilities.
+- **Build trust in the inputs first.** I added strict data contracts, quarantine, integer-cent reconciliation, and atomic database refreshes before adding explanations.
+- **Respect time.** I calculate fraud baselines from prior observations so later transactions cannot influence an earlier assessment.
+- **Preserve the investigation.** I tied decisions to an assessment revision and retained audit history so a refresh does not silently erase review work.
+- **Give AI a bounded role.** I integrated optional OpenAI and local Ollama adapters to explain existing evidence. The rules determine scores, and the analyst records the decision.
+- **Keep reporting practical.** I included Excel formulas, adjustable thresholds, charts, and a Power Query connection path alongside the application.
+
+I used entirely synthetic data to make the work reproducible and shareable. The benchmark deliberately exposes false positives and missed cases; I treat those tradeoffs as part of the product problem.
 
 ## Visual walkthrough
 
@@ -208,7 +225,7 @@ Windows users can substitute `py -3` for `python`. macOS/Linux users can substit
 | AI | Optional Responses API and local Ollama adapters, structured explanations, evidence checks, numerical checks, visible offline fallback |
 | Excel | Populated workbook, formulas, adjustable thresholds, charts, filterable tables, reporting feeds, Power Query scripts and a Windows connection helper |
 | Measurement | Synthetic confusion matrices, precision/recall/false-positive rates, threshold sensitivity, measured pipeline runtime |
-| Portfolio documentation | PRD, architecture, data dictionary, methodology, demo walkthrough, role-specific resume language and GitHub publishing guide |
+| Documentation | My product requirements, architecture decisions, data dictionary, evaluation methodology, workflow walkthrough and integration setup |
 
 ## Reproduce the included benchmark
 
@@ -240,6 +257,8 @@ python -m unittest discover -s tests -v
 The delivered Excel workbook contains the 300-account baseline. The optional Excel refresh helper adjusts calculation rows and reporting ranges when the exported dataset changes. Review dashboard charts after refresh.
 
 ## Enable AI explanations
+
+I implemented both provider adapters in `riskflow/ai.py`. Live use requires local configuration; the published screenshots use the explicitly labeled offline template. See the [step-by-step AI setup](docs/AI_SETUP.md), including how to verify a real provider response.
 
 ### OpenAI
 
@@ -286,26 +305,25 @@ web/               Dashboard HTML, CSS and JavaScript
 data/raw/          Reproducible synthetic CSVs and evaluation-only labels
 reports/           Generated benchmark, reporting CSVs and QA evidence
 excel/             Populated workbook, Power Query scripts, refresh helper
-docs/              Product/design/methodology/demo/GitHub guides
+docs/              Product requirements, design decisions, evaluation and setup
 tests/             Unit and integration tests
 .github/workflows/  Windows/Linux core checks and live MySQL CI job
 ```
 
 ## Project boundaries and verification
 
-The project implements a complete **local portfolio demonstration**. It does not include background checks, automated credit approval, a calibrated credit model, bank integrations, production authentication, or a deployed cloud service. The synthetic generator makes both normal anomalies and subtle injected fraud, so the rules visibly miss cases and generate false positives.
+I scoped RiskFlow as a reproducible **local risk analytics application**. It does not include background checks, automated credit approval, a calibrated credit model, bank integrations, production authentication, or a deployed cloud service. The synthetic generator makes both normal anomalies and subtle injected fraud, so the rules visibly miss cases and generate false positives.
 
-See [verification report](docs/VERIFICATION.md) for what was actually run, what used mocked API responses, and which integrations need verification on your machine. The local HTTP server binds to loopback and should stay local.
+I document completed checks, mocked provider tests, and remaining integration limits in the [verification report](docs/VERIFICATION.md). The local HTTP server binds to loopback and should stay local.
 
-## Put it on GitHub
+## What I would build next
 
-Follow [the step-by-step GitHub guide](docs/GITHUB_GUIDE.md). Publish the **extracted project contents**, not just the ZIP. The included `.gitignore` excludes keys, local databases, virtual environments and generated AI summaries.
+My next priorities are evaluation on a permitted dataset with an untouched temporal test period, cost-sensitive thresholds, and analyst usability testing. A calibrated credit model would be a separate addition to the current review-priority rules. A hosted version would also need authentication, access controls, and operational monitoring.
 
 ## References
 
 - [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs): optional structured explanation contract.
 - [MySQL Connector/Python connection documentation](https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html): optional database adapter.
-- [GitHub's import guide](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github): publication workflow.
 
 ## License
 

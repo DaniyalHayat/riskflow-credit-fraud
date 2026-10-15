@@ -2,13 +2,13 @@
 
 ## Problem and user
 
-A risk operations analyst needs to find financial accounts and transactions that warrant review, understand the specific evidence, and record a decision consistently. A SQL flag alone does not provide a usable investigation workflow or show the tradeoff between review volume and detection.
+I defined the product around one user problem: a risk operations analyst needs to find financial accounts and transactions that warrant review, understand the specific evidence, and record a decision consistently. A SQL flag alone does not provide a usable investigation workflow or show the tradeoff between review volume and detection.
 
 **Primary user:** credit/fraud analyst at a hypothetical lender or fintech. **Secondary users:** risk manager monitoring exposure, data engineer maintaining the pipeline, and product manager evaluating review friction and coverage.
 
 ## MVP objective
 
-Deliver one local workspace where an analyst can inspect a prioritized case, trace the score to financial/transaction records, and save a disposition. Support two separate risk types in one interface. Use reproducible synthetic data so the demonstration is shareable.
+My MVP goal was one local workspace where an analyst can inspect a prioritized case, trace the score to financial/transaction records, and save a disposition. Support two separate risk types in one interface. Use reproducible synthetic data so the demonstration is shareable.
 
 ## User stories and acceptance criteria
 

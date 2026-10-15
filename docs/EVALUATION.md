@@ -1,6 +1,6 @@
 # Evaluation and interpretation
 
-The benchmark uses 300 accounts and 18,219 valid transactions with a fixed seed of 42. Inputs are entirely synthetic. There are 80 simulated future-default accounts and 170 injected fraud transactions. The rule thresholds were fixed for this demonstration; the sensitivity grid is descriptive. There is no trained model or held-out real-world benchmark.
+I evaluated the rules on 300 accounts and 18,219 valid transactions with a fixed seed of 42. Inputs are entirely synthetic. There are 80 simulated future-default accounts and 170 injected fraud transactions. The rule thresholds were fixed for this demonstration; the sensitivity grid is descriptive. There is no trained model or held-out real-world benchmark.
 
 ## Results at threshold 40
 
@@ -31,9 +31,9 @@ Credit results evaluate a **review-priority heuristic** against stochastic synth
 
 Undefined rates use null rather than zero. No-alert precision and no-positive recall are unavailable by definition. Quarantined rows are excluded from scoring and evaluation; accepted records must each have exactly one matching label.
 
-## What you can claim
+## Interpretation limits
 
-You can report the reproducible record counts, validation checks, synthetic precision/recall, separate risk scoring, prior-only baselines, review persistence and measured local runtime. You cannot claim real fraud prevented, lending losses reduced, improved underwriting accuracy, user time saved, or production scale from this dataset.
+I use this benchmark to check reproducibility, review workload, and detection tradeoffs on synthetic data. It does not establish real fraud prevented, lending losses reduced, improved underwriting accuracy, analyst time saved, or production scale.
 
 ## More rigorous next experiment
 

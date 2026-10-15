@@ -1,5 +1,7 @@
 # Architecture and design decisions
 
+I organized RiskFlow around a reproducible batch pipeline, an inspectable review workflow, and a separate reporting layer. I chose transparent rules and relational controls so the path from source records to an analyst decision remains visible.
+
 ```mermaid
 flowchart LR
   G[Seeded synthetic generator] --> C[CSV customer / loan / payment / transaction inputs]

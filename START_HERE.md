@@ -1,4 +1,4 @@
-# Your completed RiskFlow project
+# Run RiskFlow locally
 
 This folder contains the project code, complete synthetic data, generated reports, dashboard, tests, Excel workbook and documentation. It is ready for a local demonstration.
 
@@ -19,13 +19,9 @@ python -m riskflow serve
 
 If port 8000 is busy, run `python -m riskflow serve --port 8002` and visit http://127.0.0.1:8002. If Python is not recognized on Windows, try `py -3` or reinstall Python with Add Python to PATH selected.
 
-## Publish it
+## Explore the workflow
 
-Follow **docs/GITHUB_GUIDE.md**. The simplest route is GitHub Desktop → Add local repository → create one here if needed → Commit → Publish repository. Publish the project contents, not the ZIP alone.
-
-## Learn it before an interview
-
-Read README.md, then docs/DEMO_WALKTHROUGH.md. Run the tests and inspect one credit and one fraud case. The supplied resume wording is in docs/RESUME_AND_ROLE_GUIDE.md.
+I explain the project motivation and design choices in README.md. The [workflow walkthrough](docs/DEMO_WALKTHROUGH.md) follows a credit assessment, a fraud investigation, review history, and Excel reporting. The [AI setup guide](docs/AI_SETUP.md) covers live explanations.
 
 ## Optional services
 
