@@ -69,9 +69,14 @@
       "sha256": "24bf49de4f95714771006ca3fca7a8da3eeeb422c52eefff7de188aae9fd4cbd"
     },
     {
+      "path": "docs/AI_SETUP.md",
+      "bytes": 4349,
+      "sha256": "0b8958d9b0da8126e5ab659f6771c231ca3e280b6b6efa4b1400a1a2022022fb"
+    },
+    {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 4311,
-      "sha256": "124a0a1f21074a7eb910354d2406bcc5a78c2321d919178f50651f5a58edbfd5"
+      "bytes": 4609,
+      "sha256": "a825beab42f670c4a4180cbb883d6d816e72814541612488c1d20defa88fe839"
     },
     {
       "path": "docs/DATA_DICTIONARY.md",
@@ -80,18 +85,13 @@
     },
     {
       "path": "docs/DEMO_WALKTHROUGH.md",
-      "bytes": 3039,
-      "sha256": "797533a6b60548a5bb4cc38a6db8324092d41e8cc3d9021c32690770a744c3a6"
+      "bytes": 2804,
+      "sha256": "13c434a74381290495145e2b81a59463493685570cdb0b39042c75d1bac46ba3"
     },
     {
       "path": "docs/EVALUATION.md",
-      "bytes": 2987,
-      "sha256": "d08060ef67f0f31c70446d7802e4c9ba0b5445b69b1063e37389f5b5e62a30d9"
-    },
-    {
-      "path": "docs/GITHUB_GUIDE.md",
-      "bytes": 6257,
-      "sha256": "b8aa386a1df60226f19cbc47c5ac1c5b875fd60f5cf794fb37c733b54fba6e58"
+      "bytes": 2947,
+      "sha256": "f31f19042ef24904e5f683e105f9fb3652abaf5bc1f5dc06f98a34f8a2f40667"
     },
     {
       "path": "docs/images/analytics.jpg",
@@ -180,8 +180,8 @@
     },
     {
       "path": "docs/images/project_guide.jpg",
-      "bytes": 136732,
-      "sha256": "b636f37450b08261771cb52fa9441d7eb6368095422bc5c5760fe43cee4017cd"
+      "bytes": 95638,
+      "sha256": "6c6322c435d876ca79b77755ba4989b273f38264df00965f990dfdce89bf461d"
     },
     {
       "path": "docs/images/review_queue.jpg",
@@ -200,18 +200,13 @@
     },
     {
       "path": "docs/PRODUCT_REQUIREMENTS.md",
-      "bytes": 4095,
-      "sha256": "1aed32e27bfdd2d5ecc51f01aff2951a234c440da923e04dc20aa1f112f29d83"
-    },
-    {
-      "path": "docs/RESUME_AND_ROLE_GUIDE.md",
-      "bytes": 2047,
-      "sha256": "11f3bffa2b75d69a607a411f118d827d4a56da7f490c1785483719b81b18a2ce"
+      "bytes": 4199,
+      "sha256": "adf392b9ceab1ca4503462a81795e844892331dca4ff178f6351283616d9c80c"
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 3538,
-      "sha256": "19c621513481f45622daf77130b0624a79c2cc31ffde8c7bd4fff1af50d1ed81"
+      "bytes": 3535,
+      "sha256": "51e20d728dc0ec7ef376fefb74fdce77639883a0b95432c6ef8cd04fd14340f0"
     },
     {
       "path": "excel/connect_excel.ps1",
@@ -260,8 +255,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 18993,
-      "sha256": "3307bafee88391680c9ae7a66a6521fc8976e1ea5b36e753cf9c7515ec966340"
+      "bytes": 21498,
+      "sha256": "7a18f52e4951390c76f35b3bd5bb49bd580e724276f8e03efe41dc8c4da4257b"
     },
     {
       "path": "reports/audit_events.csv",
@@ -410,8 +405,8 @@
     },
     {
       "path": "START_HERE.md",
-      "bytes": 1877,
-      "sha256": "98f11d9dbb926d0f8442a611d4cf422ee2f4f349b95c5dcc2d5a22687903a82b"
+      "bytes": 1770,
+      "sha256": "87964d542bbfe8a1a31e80e03368cc5d1091de15d40f88cffc52b87238c974c0"
     },
     {
       "path": "start_mac_linux.sh",
@@ -435,8 +430,8 @@
     },
     {
       "path": "web/app.js",
-      "bytes": 21262,
-      "sha256": "58ef98b5001d1619c4a02872001e9f9d1fd108750b1c19e9ca5aad36ac126c9e"
+      "bytes": 21305,
+      "sha256": "9570c0d2aa6e17e43245c577e808290c64a6483f3dd40d10a14a71d372ab80ff"
     },
     {
       "path": "web/index.html",
