@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "as_of": "2026-09-30",
+  "credit": {
+    "dti_moderate": 0.35,
+    "dti_high": 0.50,
+    "utilization_moderate": 0.50,
+    "utilization_high": 0.80,
+    "dpd_moderate": 30,
+    "dpd_high": 60,
+    "late_rate": 0.25,
+    "points": {"dti_moderate": 15, "dti_high": 30, "utilization_moderate": 10, "utilization_high": 20, "dpd_moderate": 20, "dpd_high": 35, "late_rate": 15},
+    "review_threshold": 40,
+    "high_threshold": 65
+  },
+  "fraud": {
+    "large_amount_cents": 500000,
+    "amount_multiple": 5,
+    "min_history": 10,
+    "history_days": 30,
+    "window_minutes": 10,
+    "velocity_count": 4,
+    "repeat_count": 3,
+    "points": {"large_amount": 30, "amount_spike": 35, "velocity": 25, "repeated_payment": 25, "new_country": 10},
+    "review_threshold": 40,
+    "high_threshold": 65
+  }
+}
