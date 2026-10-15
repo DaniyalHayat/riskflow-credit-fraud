@@ -1,0 +1,6 @@
+source,line,record_id,reason,raw_json
+transactions,18221,T0000001,Duplicate primary key,"{""amount_cents"": ""25731"", ""country"": ""US"", ""customer_id"": ""C0229"", ""merchant_id"": ""M034"", ""occurred_at"": ""2026-07-01T00:10:30"", ""transaction_id"": ""T0000001""}"
+transactions,18222,BAD-MISSING,Missing amount_cents,"{""amount_cents"": """", ""country"": ""US"", ""customer_id"": ""C0237"", ""merchant_id"": ""M008"", ""occurred_at"": ""2026-07-01T00:14:29"", ""transaction_id"": ""BAD-MISSING""}"
+transactions,18223,BAD-ORPHAN,Unknown customer_id,"{""amount_cents"": ""7687"", ""country"": ""US"", ""customer_id"": ""C99999"", ""merchant_id"": ""M023"", ""occurred_at"": ""2026-07-01T00:24:17"", ""transaction_id"": ""BAD-ORPHAN""}"
+transactions,18224,BAD-NEGATIVE,Out-of-range amount_cents,"{""amount_cents"": ""-100"", ""country"": ""US"", ""customer_id"": ""C0203"", ""merchant_id"": ""M006"", ""occurred_at"": ""2026-07-01T00:47:28"", ""transaction_id"": ""BAD-NEGATIVE""}"
+transactions,18225,BAD-FUTURE,Future timestamp or nonpositive amount,"{""amount_cents"": ""3478"", ""country"": ""US"", ""customer_id"": ""C0295"", ""merchant_id"": ""M012"", ""occurred_at"": ""2026-10-01T12:00:00"", ""transaction_id"": ""BAD-FUTURE""}"

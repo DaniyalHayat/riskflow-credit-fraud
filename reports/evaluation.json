@@ -1,0 +1,33 @@
+{
+  "dataset": "Synthetic demo; no real-world performance claim",
+  "credit_target": "Simulated default during the 90 days after the as-of date",
+  "fraud_target": "Injected synthetic transaction label",
+  "selection": "Fixed heuristic rules; sensitivity is descriptive, not a held-out tuning experiment",
+  "as_of": "2026-09-30",
+  "results": {
+    "credit": {
+      "threshold": 40,
+      "observations": 300,
+      "true_positive": 64,
+      "false_positive": 90,
+      "false_negative": 16,
+      "true_negative": 130,
+      "precision": 0.415584,
+      "recall": 0.8,
+      "false_positive_rate": 0.409091,
+      "alert_rate": 0.513333
+    },
+    "fraud": {
+      "threshold": 40,
+      "observations": 18219,
+      "true_positive": 85,
+      "false_positive": 119,
+      "false_negative": 85,
+      "true_negative": 17930,
+      "precision": 0.416667,
+      "recall": 0.5,
+      "false_positive_rate": 0.006593,
+      "alert_rate": 0.011197
+    }
+  }
+}
