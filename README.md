@@ -8,9 +8,11 @@ I built RiskFlow to explore how financial risk analysis, reliable data pipelines
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-54657A)](LICENSE)
 
-[Open the Excel workbook](excel/RiskFlow_Analytics.xlsx) · [Architecture](docs/ARCHITECTURE.md) · [Product requirements](docs/PRODUCT_REQUIREMENTS.md) · [Workflow walkthrough](docs/DEMO_WALKTHROUGH.md) · [AI setup](docs/AI_SETUP.md)
+[Download the Excel workbook](excel/RiskFlow_Analytics.xlsx) · [Architecture](docs/ARCHITECTURE.md) · [Product requirements](docs/PRODUCT_REQUIREMENTS.md) · [Workflow walkthrough](docs/DEMO_WALKTHROUGH.md) · [AI setup](docs/AI_SETUP.md)
 
 ![RiskFlow dashboard](docs/images/dashboard.jpg)
+
+**Opening the workbook on GitHub:** click the download arrow next to **Raw** (Download raw file), then open the downloaded `.xlsx` file in desktop Excel. GitHub does not show an interactive workbook preview; the sheet screenshots are below.
 
 ## Why I built it
 
@@ -114,7 +116,7 @@ The in-app guide explains the sequence from synthetic inputs to analyst review a
 
 ### Excel workbook — all seven sheets
 
-[Download/open RiskFlow_Analytics.xlsx](excel/RiskFlow_Analytics.xlsx). These are rendered worksheet previews of the supplied workbook. Dashboard and Controls show their complete working sections; long record tables show readable sample rows rather than thousands of rows compressed into one image. Every source record remains available in the workbook.
+[Download RiskFlow_Analytics.xlsx](excel/RiskFlow_Analytics.xlsx). On its GitHub file page, click the **download arrow next to Raw**, then open the downloaded file in desktop Excel. These are rendered worksheet previews of the supplied workbook. Dashboard and Controls show their complete working sections; long record tables show readable sample rows rather than thousands of rows compressed into one image. Every source record remains available in the workbook.
 
 | Sheet | What it demonstrates |
 |---|---|
