@@ -90,8 +90,8 @@
     },
     {
       "path": "docs/GITHUB_GUIDE.md",
-      "bytes": 4993,
-      "sha256": "448e1a389b2e65cef56951af18286b8258e39dc1d1ce35d6742ceacb1e0de977"
+      "bytes": 6257,
+      "sha256": "b8aa386a1df60226f19cbc47c5ac1c5b875fd60f5cf794fb37c733b54fba6e58"
     },
     {
       "path": "docs/images/analytics.jpg",
@@ -210,8 +210,8 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 2872,
-      "sha256": "7637f0f40a230c2294e0be857180186a57268418195519008343c7c154139f75"
+      "bytes": 3538,
+      "sha256": "19c621513481f45622daf77130b0624a79c2cc31ffde8c7bd4fff1af50d1ed81"
     },
     {
       "path": "excel/connect_excel.ps1",
