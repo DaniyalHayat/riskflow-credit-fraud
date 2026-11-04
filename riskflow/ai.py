@@ -38,11 +38,15 @@ def validate(result, packet):
     if not isinstance(result["observations"], list) or not result["observations"]:
         raise ValueError("AI output has no cited observations")
     known = {e["id"] for e in packet["evidence"]}
+    evidence_by_id = {e["id"]:e for e in packet["evidence"]}
     cited = []
     for item in result["observations"]:
         if not isinstance(item, dict) or set(item) != {"evidence_id", "explanation"} or item["evidence_id"] not in known or not isinstance(item["explanation"], str) or not 1 <= len(item["explanation"]) <= 1000:
             raise ValueError("AI cited missing evidence or returned an invalid observation")
         cited.append(item["evidence_id"])
+        allowed_numbers = set(re.findall(r"\d+(?:\.\d+)?", json.dumps(evidence_by_id[item["evidence_id"]])))
+        if not set(re.findall(r"\d+(?:\.\d+)?", item["explanation"])).issubset(allowed_numbers):
+            raise ValueError("AI attributed a numerical value to the wrong evidence")
     if len(cited) != len(set(cited)):
         raise ValueError("AI duplicated evidence references")
     if not isinstance(result["next_steps"], list) or not result["next_steps"] or any(x not in STEPS for x in result["next_steps"]):

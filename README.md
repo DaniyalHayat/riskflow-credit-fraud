@@ -330,3 +330,7 @@ My next priorities are evaluation on a permitted dataset with an untouched tempo
 ## License
 
 MIT. All included customer and transaction data is synthetic.
+
+## November 4 implementation and validation
+
+Numerical tokens in generated observations must match their specifically cited signal, preventing reassignment of a number from another signal. The November 4 run passed 35 tests including actual MySQL 8.4 integration. These checks do not guarantee semantic truth or establish real-world fraud performance.
