@@ -12,13 +12,11 @@ I built RiskFlow to explore how financial risk analysis, reliable data pipelines
 
 ![RiskFlow dashboard](docs/images/dashboard.jpg)
 
-**Opening the workbook on GitHub:** click the download arrow next to **Raw** (Download raw file), then open the downloaded `.xlsx` file in desktop Excel. GitHub does not show an interactive workbook preview; the sheet screenshots are below.
+Use the download arrow next to **Raw** on GitHub, then open the workbook in desktop Excel.
 
 ## Why I built it
 
-My starting point was a SQL transaction-monitoring prototype. I wanted to take that foundation beyond a list of anomaly flags and build a workflow that answers three questions: what needs review, why was it flagged, and what happened after someone investigated it?
-
-The intersection of finance and technology is what interests me about this project. I wanted the financial indicators, data-quality checks, interface, and reporting outputs to tell the same story. That led me to keep credit review and fraud monitoring separate while bringing their evidence and review history into one workspace.
+I started with a SQL transaction-monitoring prototype. I wanted to see what needed review, which rule flagged it, and how the analyst resolved it. RiskFlow keeps credit review and fraud monitoring in separate queues with a shared evidence and decision history.
 
 ## My design choices
 
@@ -280,7 +278,7 @@ Install [Ollama](https://ollama.com/), run `ollama pull llama3.2`, and ensure it
 python -m riskflow summary --provider ollama
 ```
 
-AI output is checked for valid evidence references, supported next steps and supplied numerical tokens. This does not prove that every sentence is factually sound. Connection failures, refusals and invalid responses visibly fall back to the offline template. The offline template is not represented as AI.
+Generated explanations must cite valid evidence and use only numbers from the specific signal they cite. These checks can catch mismatched numbers and unsupported next steps. Connection failures, refusals, and invalid responses switch to the labeled offline template.
 
 ## Use MySQL
 
@@ -330,7 +328,3 @@ My next priorities are evaluation on a permitted dataset with an untouched tempo
 ## License
 
 MIT. All included customer and transaction data is synthetic.
-
-## November 4 implementation and validation
-
-Numerical tokens in generated observations must match their specifically cited signal, preventing reassignment of a number from another signal. The November 4 run passed 35 tests including actual MySQL 8.4 integration. These checks do not guarantee semantic truth or establish real-world fraud performance.
